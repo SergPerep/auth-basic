@@ -1,0 +1,28 @@
+{
+  "name": "auth-basic",
+  "version": "1.0.0",
+  "description": "Simple example of basic authentication",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SergPerep/auth-basic.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SergPerep/auth-basic/issues"
+  },
+  "homepage": "https://github.com/SergPerep/auth-basic#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "express-basic-auth": "^1.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
