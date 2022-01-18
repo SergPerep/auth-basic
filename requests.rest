@@ -1,0 +1,13 @@
+GET http://localhost:5000/
+
+###
+
+# Wrong credentials
+GET http://localhost:5000/auth
+Authorization: Basic Ym9iLXRoZS1idWlsZGVyQGdtYWlsLmNvbTpsYWxhbGFuZA77
+
+###
+
+# Correct credentials
+GET http://localhost:5000/auth 
+Authorization: Basic Ym9iLXRoZS1idWlsZGVyQGdtYWlsLmNvbTpsYWxhbGFuZA==

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sample Site</title>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Login</h1>
+            <form id="form">
+                <input id="email" type="email" placeholder="Email" required value="bob-the-builder@gmail.com" /> <br />
+                <input id="password" type="password" placeholder="Password" required value="lalaland" /> <br />
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script>
+
+        const formEl = document.querySelector("#form");
+        const emailValue = document.getElementById('email').value;
+        const passwordValue = document.getElementById('password').value;
+
+        console.log({ emailValue, passwordValue });
+
+        formEl.addEventListener("submit", async (e) => {
+
+            e.preventDefault();
+
+            const creadentials = btoa(`${emailValue}:${passwordValue}`); // encode with base-24
+
+            console.log({ creadentials });
+
+            try {
+                const serverData = await fetch("http://localhost:5000/auth", {
+                    headers: {
+                        "Authorization": `Basic ${creadentials}`
+                    }
+                })
+                const message = await serverData.json();
+                console.log(message);
+            } catch (error) {
+                console.error(error.message);
+            }
+        })
+    </script>
+
+</body>
+
+</html>
